@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.random.RandomGenerator;
 
 public class Main {
     //global variables
@@ -40,7 +41,10 @@ public class Main {
         // write your code here
         public static boolean theSimulatie(int prisioners, int aantalPogingen){
             HashMap bord = gameSetup(prisioners);
-
+            int curentPrisoner = 1;
+            while (curentPrisoner <=prisioners){
+                //run code per prisoner
+            }
 
 
             return true; //if won true if lost false
@@ -77,6 +81,21 @@ public class Main {
             }
             return zeroToPrisioners;
         }
+
+        public  static boolean strategie1 (int currentprisioner, HashMap bord, int pogingen, int prisioners){
+            ArrayList listOfClosedBoxes = generrateListOfZeroToPrisioners(prisioners);
+
+
+
+
+        }
+
+        public int generateRandomNumber(int min, int max){
+            int int_random = (int)Math.floor(Math.random()*(max-min+1)+min);
+            return int_random;
+        }
+
+
 
 
 
