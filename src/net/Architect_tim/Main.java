@@ -148,11 +148,37 @@ public class Main {
 
         }
 
+        public static boolean strategie2(int currentprisioner, HashMap bord, int pogingen, int prisioners){
+            ArrayList<Integer> listOfClosedBoxes = generrateListOfZeroToPrisioners(prisioners);
+            while ((pogingen >=1)) {
+                int chosenBox = 999999999;
+                while (!(listOfClosedBoxes.contains(chosenBox))) {
+                    int sizeOfListOfClosedBoxenIndex = listOfClosedBoxes.size();
+                    sizeOfListOfClosedBoxenIndex--;
+                    chosenBox = (int) listOfClosedBoxes.get(generateRandomNumber(0, sizeOfListOfClosedBoxenIndex));
+                }
+
+                listOfClosedBoxes.remove(listOfClosedBoxes.indexOf(chosenBox));
+                int value = (int) bord.get(chosenBox);
+                //checks if the prisioner has won
+                if (value == currentprisioner) {
+                    return true;
+                }else {
+                    pogingen--;
+                }
+
+
+            }
+            return false;
+        }
+
         public static int generateRandomNumber(int min, int max){
 
             int int_random = (int)Math.floor(Math.random()*(max-min+1)+min);
             return int_random;
         }
+
+
 
 
 
