@@ -22,11 +22,13 @@ public class Main {
         int sucesFullRuns = 0;
         int lostRuns = 0;
         int algoritmeChoice = 0;
+        int runsDone = 1;
+
 
 
         Scanner sc = new Scanner(System.in);
         //start instellingen
-        System.out.println("Hello, type 1 to start the program. Type 2 to get more info. Type 3 to get results that are already calculated. Type 4 to stop the program. ");
+        System.out.println("Hello, type 1 to start the program. Type 2 to get more info. Type 3 to stop the program. ");
         int StartStatus = 2;
         try{
              StartStatus = sc.nextInt();
@@ -43,11 +45,8 @@ public class Main {
 
 
         }
-        else if(StartStatus == 3){
-            AlreadyCalculated();
-            start();
-        }
-        else if (StartStatus == 4){
+
+        else if (StartStatus == 3){
             System.out.println("Thanks for using this program.");
             System.out.println("The program is stoping");
             System.exit(0);
@@ -61,7 +60,7 @@ public class Main {
 
 
         //gets the strategie
-        System.out.println("Type 1 to use Strategie(random) 1. Type 2 to use Strategie(the proposed solusion) 2. Type 3 to use Strategie 1 and 2: ");
+        System.out.println("Type 1 to use Strategie(random) 1. Type 2 to use Strategie(the proposed solusion) 2: ");
             try{
                 algoritmeChoice = sc.nextInt();
 
@@ -69,10 +68,7 @@ public class Main {
                 System.out.println("ERROR: Enter 1 or 2 or 3.");
                 start();
             }
-            if (algoritmeChoice == 3){
-                System.out.println("ERROR: Work in progres!");
-                start();
-            }
+
 
 
         System.out.println("enter number of prisioners:");
@@ -105,22 +101,29 @@ public class Main {
         //now I have all the properties of the program
 
         System.out.println("The simulaties will be run...");
-        while (aantalRuns >=1) { //runs the program x times
+        int i = aantalRuns;
+        while (i >=1) { //runs the program x times
             Boolean result = theSimulatie(prisioners, aantalPogingen, algoritmeChoice);
-            System.out.println(result);
+            System.out.println(runsDone+" of "+ aantalRuns);
+            runsDone++;
             if (result){
                 sucesFullRuns++;
             }
             if (!(result)){
                 lostRuns++;
             }
-            aantalRuns--;
+            i--;
+
         }
-        System.out.println("sucesfulRuns: "+sucesFullRuns);
-        System.out.println("lostRuns: "+lostRuns);
-        System.out.println("end of program");
-        System.out.println("program restarting...");
-        System.out.println("program restarted.");
+
+            System.out.println("sucesfulRuns: "+sucesFullRuns);
+            System.out.println("lostRuns: "+lostRuns);
+            double percentage = sucesFullRuns * 100.0000 / aantalRuns;
+            System.out.println(percentage+"% of the runs was sucesful.");
+            System.out.println("end of program");
+            System.out.println("program restarting...");
+            System.out.println("program restarted.");
+            start();
     }
 
         // write your code here
@@ -134,7 +137,7 @@ public class Main {
                      wonOrLost = strategie1(curentPrisoner, bord, aantalPogingen, prisioners);
                 }
                 else if (algoritmeChoice == 2){
-                     wonOrLost = strategie1(curentPrisoner, bord, aantalPogingen, prisioners);
+                     wonOrLost = strategie2(curentPrisoner, bord, aantalPogingen, prisioners);
                 }
                 if  (wonOrLost == false){
                     return false;
@@ -239,8 +242,10 @@ public class Main {
             System.out.println("https://www.youtube.com/watch?v=iSNsgj1OCLA&t=97s");
             System.out.println("This program simulates the two strategies discussed in the video.");
             System.out.println("Strategie 1 is what happends when every prissioner picks 50 random boxes.");
-            System.out.println("Strategie 2 is what happens when every prissioner start whit the box of his number en then picks the box of the number in the box that he has opend.");
-            System.out.println("Please note dat if you see that whit strategie 1 zero runs sucesful are that that is coused by the low change of winning and that the program is not broken.");
+            System.out.println("Strategie 2 is what happens when every prissioner start whit the box of his number en ");
+            System.out.println("then picks the box of the number in the box that he has opend.");
+            System.out.println("Please note dat if you see that whit strategie 1 zero runs sucesful are that that is coused by the low change of winning ");
+            System.out.println("and that the program is not broken.");
             System.out.println("You can check that by setting the amoud of prissioners to 100 and the ammound of boxes they get to open set to 99. ");
             System.out.println("When you start the program you get the choice of running Strategie 1 or running strategie 2 or running both. ");
             System.out.println("then you get the coice of the amound of prisioners and the amound of boxes each prisioner gets to open.");
@@ -249,9 +254,7 @@ public class Main {
 
 
         }
-        public static void AlreadyCalculated(){
-            System.out.println("NOG TOE TE VOEGEN ");
-        }
+
 
 
 
