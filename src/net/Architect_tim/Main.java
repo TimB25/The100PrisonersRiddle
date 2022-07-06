@@ -79,19 +79,19 @@ public class Main {
             System.out.println("ERROR: Enter a number! Rerun the program or the number of prisioners wil be the default of 100!");
         }
         System.out.println("you have chosen that there wil be " + prisioners+" prisioners.");
-        System.out.println("enter number of pogingen that every prisener has:");
+        System.out.println("enter number of try's that every prisener has:");
         try {
             aantalPogingen = sc.nextInt();
         } catch (InputMismatchException e) {
-            System.out.println("ERROR: Enter a number! Rerun the program or the number of aantalPogingen wil be the default of 50!");
+            System.out.println("ERROR: Enter a number! Rerun the program or the number of try's wil be the default of 50!");
         }
-        System.out.println("you have chosen that there wil be " + aantalPogingen+" pogingen.");
+        System.out.println("you have chosen that there wil be " + aantalPogingen+" try's.");
         if (aantalPogingen > prisioners){
-            System.out.println("ERROR: Het aantal pogingen is hoger dan het aantal dozen waar uit te kiezen is!");
+            System.out.println("ERROR: The number of !");
             System.out.println("please try again.");
             start();
         }
-        System.out.println("enter het aantal runs dat wordt uigevoerd:");
+        System.out.println("enter the number of runs that wil be executed:");
         try {
             aantalRuns = sc.nextInt();
         } catch (InputMismatchException e) {
@@ -247,9 +247,10 @@ public class Main {
             System.out.println("Please note dat if you see that whit strategie 1 zero runs sucesful are that that is coused by the low change of winning ");
             System.out.println("and that the program is not broken.");
             System.out.println("You can check that by setting the amoud of prissioners to 100 and the ammound of boxes they get to open set to 99. ");
-            System.out.println("When you start the program you get the choice of running Strategie 1 or running strategie 2 or running both. ");
+            System.out.println("When you start the program you get the choice of running Strategie 1 or running strategie 2.");
             System.out.println("then you get the coice of the amound of prisioners and the amound of boxes each prisioner gets to open.");
             System.out.println("then you get to pick the amound of runs you want to run. ");
+            System.out.println("For more information contact Architect_tim#3064 on Discord.");
 
 
 
