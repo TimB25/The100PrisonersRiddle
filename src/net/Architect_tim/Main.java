@@ -28,7 +28,7 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         //start instellingen
-        System.out.println("Hello, type 1 to start the program. Type 2 to get more info. Type 3 to stop the program. ");
+        System.out.println("Hello, type 1 to start the program. Type 2 to get more info. Type 3 to stop the program. (Press enter to confirm your input)");
         int StartStatus = 2;
         try{
              StartStatus = sc.nextInt();

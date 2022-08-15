@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="The100PrisonersRiddle:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/The100PrisonersRiddle_jar</output-path>
+    <root id="archive" name="The100PrisonersRiddle.jar">
+      <element id="module-output" name="The100PrisonersRiddle" />
+    </root>
+  </artifact>
+</component>
